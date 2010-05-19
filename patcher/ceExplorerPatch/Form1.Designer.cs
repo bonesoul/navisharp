@@ -28,55 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu = new System.Windows.Forms.MainMenu();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuRunExplorer = new System.Windows.Forms.MenuItem();
             this.listboxInfo = new System.Windows.Forms.ListBox();
             this.cmdPatch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // mainMenu
-            // 
-            this.mainMenu.MenuItems.Add(this.menuItem1);
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.MenuItems.Add(this.menuRunExplorer);
-            this.menuItem1.Text = "Menu";
-            // 
-            // menuRunExplorer
-            // 
-            this.menuRunExplorer.Text = "Run Explorer";
-            this.menuRunExplorer.Click += new System.EventHandler(this.menuRunExplorer_Click);
             // 
             // listboxInfo
             // 
-            this.listboxInfo.Location = new System.Drawing.Point(3, 31);
+            this.listboxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listboxInfo.Location = new System.Drawing.Point(3, 3);
             this.listboxInfo.Name = "listboxInfo";
-            this.listboxInfo.Size = new System.Drawing.Size(234, 156);
+            this.listboxInfo.Size = new System.Drawing.Size(234, 100);
             this.listboxInfo.TabIndex = 0;
             // 
             // cmdPatch
             // 
+            this.cmdPatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdPatch.Enabled = false;
-            this.cmdPatch.Location = new System.Drawing.Point(3, 193);
+            this.cmdPatch.Location = new System.Drawing.Point(13, 123);
             this.cmdPatch.Name = "cmdPatch";
-            this.cmdPatch.Size = new System.Drawing.Size(234, 29);
+            this.cmdPatch.Size = new System.Drawing.Size(211, 29);
             this.cmdPatch.TabIndex = 1;
             this.cmdPatch.Text = "Patch";
             this.cmdPatch.Click += new System.EventHandler(this.cmdPatch_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(0, 267);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(240, 27);
+            this.label3.Text = "USE THIS SOFTWARE ON YOUR OWN RISK!";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(0, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 27);
+            this.label2.Text = "Instructions: http://code.google.com/p/navisharp";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(240, 268);
+            this.ClientSize = new System.Drawing.Size(240, 294);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmdPatch);
             this.Controls.Add(this.listboxInfo);
-            this.Menu = this.mainMenu;
             this.Name = "Form1";
-            this.Text = "ceExplorerPatcher";
+            this.Text = "NaviSharp Patcher 0.0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -84,11 +95,10 @@
 
         #endregion
 
-        private System.Windows.Forms.MainMenu mainMenu;
-        private System.Windows.Forms.MenuItem menuItem1;
-        private System.Windows.Forms.MenuItem menuRunExplorer;
         private System.Windows.Forms.ListBox listboxInfo;
         private System.Windows.Forms.Button cmdPatch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -33,28 +33,34 @@ namespace ceExplorerPatch
                     rootkey = Microsoft.Win32.Registry.CurrentUser;
                     break;
             }
-            return rootkey.OpenSubKey(_key);
+            return rootkey.OpenSubKey(_key,true);
         }
         
         public static bool CheckKey(KEY_ROOT root, string _key)
         {
+            bool exists = false;
             RegistryKey key=GetKey(root, _key);
-            if (key == null)
-                return false;
-            else
-                return true;
+            if (key != null) exists = true;
+            key.Close();
+            key.Flush();
+            return exists;
         }
 
-        public static object GetValue(KEY_ROOT root, string _key, string _value)
+        public static object GetValue(KEY_ROOT root, string _key, string _name)
         {
             RegistryKey key = GetKey(root, _key);
-            return key.GetValue(_value);
+            object value = key.GetValue(_name);
+            key.Close();
+            key.Flush();
+            return value;
         } 
 
         public static void SetValue(KEY_ROOT root, string _key, string _name,object _value)
         {
             RegistryKey key = GetKey(root, _key);
             key.SetValue(_name, _value);
+            key.Close();
+            key.Flush();
         }
     }
 }
