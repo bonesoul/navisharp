@@ -28,6 +28,8 @@ namespace NaviSharp
                 picBattery.Image = battery_images.Images[0];
 
             labelTime.Text = DateTime.Now.Hour.ToString("00") + ":" + DateTime.Now.Minute.ToString("00");
+
+            Bluetooth b = new Bluetooth();
         }
 
         private void button1_Click(object sender, EventArgs e)
